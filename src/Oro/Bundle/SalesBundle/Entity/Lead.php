@@ -655,9 +655,6 @@ class Lead implements
         return (string) $this->getName();
     }
 
-    /**
-     * Pre persist event listener
-     */
     #[ORM\PrePersist]
     public function beforeSave()
     {
@@ -665,9 +662,6 @@ class Lead implements
         $this->updatedAt = clone $this->createdAt;
     }
 
-    /**
-     * Pre update event handler
-     */
     #[ORM\PreUpdate]
     public function beforeUpdate()
     {

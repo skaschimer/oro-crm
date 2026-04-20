@@ -345,9 +345,6 @@ class B2bCustomer implements
         return $this;
     }
 
-    /**
-     * Pre persist event listener
-     */
     #[ORM\PrePersist]
     public function prePersist()
     {
@@ -355,9 +352,6 @@ class B2bCustomer implements
         $this->updatedAt = clone $this->createdAt;
     }
 
-    /**
-     * Pre update event handler
-     */
     #[ORM\PreUpdate]
     public function preUpdate()
     {
