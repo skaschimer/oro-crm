@@ -354,9 +354,6 @@ class Opportunity implements
         return $this;
     }
 
-    /**
-     * @return void
-     */
     #[ORM\PreFlush]
     #[\Override]
     public function updateMultiCurrencyFields()
@@ -701,6 +698,7 @@ class Opportunity implements
     {
         return (string) $this->getName();
     }
+
     #[ORM\PrePersist]
     public function beforeSave()
     {

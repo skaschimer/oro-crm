@@ -287,9 +287,6 @@ class Account implements EmailHolderInterface, NameInterface, ExtendEntityInterf
         return (string) $this->getName();
     }
 
-    /**
-     * Pre persist event listener
-     */
     #[ORM\PrePersist]
     public function beforeSave()
     {
@@ -297,9 +294,6 @@ class Account implements EmailHolderInterface, NameInterface, ExtendEntityInterf
         $this->updatedAt = clone $this->createdAt;
     }
 
-    /**
-     * Pre update event handler
-     */
     #[ORM\PreUpdate]
     public function doPreUpdate()
     {
